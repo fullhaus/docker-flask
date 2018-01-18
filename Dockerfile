@@ -2,10 +2,10 @@ FROM centos:7
 
 MAINTAINER Vasyl Mykhaylyshyn <vmykhail@cisco.com>
 
-# install base packs
+# install base packages
 # apache.wsgi python pip
 RUN yum -y install epel-release; \
-    yum -y install python2-pip httpd mod_wsgi; yum clean all;
+    yum -y install python-pip httpd mod_wsgi; yum clean all;
 
 # Simple startup script to avoid some issues observed with container restart (CentOS tip)
 ADD setup/run-apache-httpd.sh /run-apache-httpd.sh
